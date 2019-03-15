@@ -13,19 +13,10 @@ const WEATHER_KEY = "e62ca1662f184b4c88d103557191303";
 
 class App extends Component {
 
-  constructor(props) { // le constructeur d'un composant React est appelé avant son montage. 
-                        // lors de l'implémentation du constructeur pour une sous-classe React.Component,
-                        // nous devons appeler super(props) avant tout autre instruction. 
-                        // Sinon, this.props sera indéfini dans le constructeur, ce qui peut entraîner des bugs.
-                        //
-                        // Constructor est le seul endroit où nous devons renseinger this.state. 
-                        // Dans les autres méthodes, nous devons utiliser this.setState() à la place. 
+  constructor(props) { 
 
-    super(props); // super fait référence au constructeur de la classe parente. pointe sur l’implémentation de React.Component.
-                  // Props : Une prop est toujours passée par un composant parent à son composants enfants : c’est le seul moyen normal de transmission
-                  // Une prop est considérée en lecture seule dans le composant qui la reçoit  
-    
-                  this.state = {
+    super(props); 
+    this.state = {
 
       cityName: "Paris",
       numForcastDays: 5,
@@ -72,11 +63,8 @@ class App extends Component {
   
   }
 
-  componentDidMount() { // cette méthode est appelée une fois que tous les éléments de la page sont rendus correctement. 
-                        // Une fois le balisage défini sur la page. 
-                        // Cette méthode est appelée par React lui-même, soit pour récupérer les données depuis une API externe, 
-                        // soit pour effectuer des opérations uniques qui nécessitent des éléments JSX.
-    
+  componentDidMount() { 
+
     const { eventEmitter } = this.props;
 
     this.updateWeather();
@@ -90,9 +78,7 @@ class App extends Component {
 
   }
 
-  render() {  // considérée comme une fonction normale mais en réalité elle doit toujours retourner quelque chose. 
-              // Lorsque le fichier composant est appelé, il appelle par défaut la méthode render() parce que ce composant doit afficher 
-              // le balisage HTML (qu'on peut qualifier de syntaxe JSX).
+  render() {  
 
     const { 
       

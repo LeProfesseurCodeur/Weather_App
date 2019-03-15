@@ -8,7 +8,7 @@ export default class Store extends React.Component {
 
         this.eventEmitter = new EventEmitter();
 
-        // Main App State
+       
         this.state = {
             appName: "Weather Up"
         };
